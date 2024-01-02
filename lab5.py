@@ -121,29 +121,6 @@ move_codes = [
     39,
 ]
 
-def draw_shape():
-    glLineWidth(5.0)
-    glBegin(GL_LINES)
-    glColor3f(0.2235, 1.0, 0.0784)  # 39FF14
-
-    current_point = None
-
-    for code in move_codes:
-        if code == -1:
-            # move without drawing
-            current_point = None
-        else:
-            x, y = points[code - 1]  # adjust for 0-based indexing
-            x = int(x)
-            y = int(y)
-
-            if current_point is not None:
-                glVertex2f(*current_point)
-                glVertex2f(x, y)
-            current_point = (x, y)
-
-    glEnd()
-
 def draw_shape_3d_rev1(depth=-10):
     glLineWidth(5.0)
     glBegin(GL_LINES)
