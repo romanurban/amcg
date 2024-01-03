@@ -7,9 +7,10 @@ def window_resize(window, width, height):
     glViewport(0, 0, width, height)
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
-    gluOrtho2D(0, width, 0, height)
+    # gluOrtho2D(0, width, 0, height)
     # gluOrtho2D(0, width*4, 0, height) # narrow horizontally
     # gluOrtho2D(0, width, 0, height*4) # narrow vertically
+    gluOrtho2D(0, width, height, 0)
     glMatrixMode(GL_MODELVIEW)
     glLoadIdentity()
 
